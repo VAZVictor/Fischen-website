@@ -9,7 +9,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #004080;
+    background-color: #0e613f;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -17,6 +17,26 @@ header {
 
 header h1 {
     margin: 0;
+}
+
+/* QR Code Styling */
+.header-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.qr-code {
+    width: 75px; /* Größe anpassen */
+    height: 75px;
+    margin-right: 10px; /* Abstand zwischen QR-Code und Text */
+}
+
+.header-text {
+    font-size: 14px;
+    color: white;
 }
 
 nav ul {
@@ -45,10 +65,11 @@ nav ul li a:hover {
 /* Section Styling */
 section {
     padding: 20px;
-    margin: 10px;
+    margin: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 tab:hover{
@@ -56,16 +77,33 @@ tab:hover{
 }
 
 section h2 {
-    color: #004080;
+    color: #074e33;
+}
+
+section:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styling */
 footer {
-    background-color: #004080;
+    background-color: #0e613f;
     color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width:100%;
+}
+
+.wiki-link {
+    font-size: 0.8em;
+    float: right;
+    text-decoration: none;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.wiki-link:hover {
+
+    text-decoration: underline;
 }
