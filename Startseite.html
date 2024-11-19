@@ -24,32 +24,95 @@
 </header>
 
 <section>
-  <h2>Was ist Fischen?</h2>
-  <p>Fischen ist eine Aktivität, bei der Menschen Fische fangen, sei es aus Flüssen, Seen oder dem Meer. Es kann sowohl kommerziell als auch zum Vergnügen betrieben werden. <a href="https://de.wikipedia.org/wiki/Fischen" class="wiki-link">Mehr dazu auf Wikipedia</a>.</p>
+  <h2>Über Fischen</h2>
+  <p>Eine Einführung in die Welt der Fischerei, ihre Geschichte und ihre Bedeutung für verschiedene Kulturen weltweit.</p>
 </section>
 
 <section>
-  <h2>Warum fischt man?</h2>
-  <p>Ob als Hobby oder vermeintliche Sportart – Angeln bedeutet Tierleid... <a href="https://de.wikipedia.org/wiki/Angeln" class="wiki-link">Mehr dazu auf Wikipedia</a>.</p>
+  <h2>Arten der Fischerei</h2>
+  <p>Es gibt verschiedene Arten der Fischerei, die von der Küsten- bis zur Hochseefischerei reichen.</p>
 </section>
 
 <section>
-  <h2>Geschichte des Fischfangs</h2>
-  <p>Der Fischfang hat eine lange Tradition und ist eine der ältesten Überlebensstrategien der Menschheit. <a href="https://de.wikipedia.org/wiki/Fischerei#Geschichte" class="wiki-link">Geschichte der Fischerei auf Wikipedia</a>.</p>
+  <h2>Die besten Fangzeiten</h2>
+  <p>Unterschiedliche Fische können zu verschiedenen Jahreszeiten und zu unterschiedlichen Tageszeiten gefangen werden.</p>
 </section>
 
 <section>
-  <h2>Moderne Techniken</h2>
-  <p>Moderne Techniken ermöglichen effizientes Fischen, aber auch ein erhöhtes Risiko für Überfischung. <a href="https://de.wikipedia.org/wiki/%C3%9Cberfischung" class="wiki-link">Mehr zur Überfischung auf Wikipedia</a>.</p>
+  <h2>Wichtige Ausrüstung</h2>
+  <p>Eine Übersicht über die Grundausstattung, die zum erfolgreichen Angeln erforderlich ist.</p>
+</section>
+
+<section>
+  <h2>Regionale Fischereimethoden</h2>
+  <p>Von Japan bis Norwegen: Einblick in verschiedene traditionelle Methoden weltweit.</p>
+</section>
+
+<section>
+  <h2>Fischen als Freizeitaktivität</h2>
+  <p>Warum Angeln ein entspannendes Hobby und eine großartige Gelegenheit zur Entspannung sein kann.</p>
+</section>
+
+<section>
+  <h2>Ernährung und Fisch</h2>
+  <p>Die gesundheitlichen Vorteile des Fischkonsums und wie er als Proteinquelle dient.</p>
+</section>
+
+<section>
+  <h2>Angeltipps für Einsteiger</h2>
+  <p>Tipps und Tricks, wie Sie Ihr erstes erfolgreicheres Angeln haben können.</p>
+</section>
+
+<section>
+  <h2>Fischen in verschiedenen Gewässern</h2>
+  <p>Unterschiede zwischen Süß- und Salzwasserangeln sowie die besten Plätze zum Angeln weltweit.</p>
 </section>
 
 <footer>
   <p>2024 Fischen Präsentation</p>
   <nav>
     <ul>
-      <li><a href="https://copyrightindex.com/get-copyright-registration-Austria/"><c>&copy; Copyright Policy</a></li>
+      <li><a href="https://copyrightindex.com/get-copyright-registration-Austria/">&copy; Copyright Policy</a></li>
     </ul>
   </nav>
 </footer>
+
+<!-- Cookie Pop-up -->
+<div id="cookie-popup">
+  <div id="popup-content">
+    <h2>Cookie-Richtlinie</h2>
+    <p>Diese Website verwendet Cookies, aber keine Sorge: Wir speichern nichts und greifen auf nichts zu! Möchtest du uns trotzdem vertrauen? 🍪</p>
+    <button id="accept-cookies">Ja, warum nicht!</button>
+    <button id="decline-cookies">Niemals!</button>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('cookie-popup');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    let hasAccepted = false;
+
+    // Überprüfen, ob Cookies bereits akzeptiert wurden
+    if (!localStorage.getItem('cookiesAccepted')) {
+      popup.style.display = 'block';
+    }
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      alert('Danke für dein Vertrauen! Viel Spaß auf der Website! 🍪'); // alert für die google message
+      popup.style.display = 'none';
+      hasAccepted = true;
+    });
+
+    declineBtn.addEventListener('click', () => {
+      alert('Oh nein, ohne Cookies wird es hier schwierig... 😜'); // alert für die google message
+      localStorage.setItem('cookiesAccepted', 'false');
+      // Benutzer bekommt keinen Zugriff auf die Website
+      window.location.href = 'https://media.istockphoto.com/id/174478330/de/foto/kekse-mit-schokolade-chips.jpg?s=612x612&w=0&k=20&c=htjaq7AuZ5kDGxkIE-y7w2WoWgV3nzvauP3gBWl-AhQ='; // Umleiten zu einer anderen Seite (z.B. Google)
+      popup.style.display = 'none';
+    });
+  });
+</script>
 </body>
 </html>
