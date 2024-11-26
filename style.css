@@ -3,7 +3,7 @@ body {
     background-color: #f0f0f0;
     color: #333;
     margin: 0;
-    cursor: url('Pictures-Website/cursor-image.png') 64 64, auto; /*does not function at the time*/
+    cursor: url('Pictures-Website/Fish-icon.png') 64 64, auto; /*does not work properly at the time*/
     padding-top: 85px; /* Adjusted for fixed header */
     padding-bottom: 90px; /* Adjusted for fixed footer */
 }
