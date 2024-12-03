@@ -91,28 +91,29 @@
     const popup = document.getElementById('cookie-popup');
     const acceptBtn = document.getElementById('accept-cookies');
     const declineBtn = document.getElementById('decline-cookies');
-    let hasAccepted = false;
 
-    // Überprüfen, ob Cookies bereits akzeptiert wurden
-    if (!localStorage.getItem('cookiesAccepted')) {
+    // Überprüfen, ob Cookies bereits akzeptiert oder abgelehnt wurden
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+    // Pop-up nur anzeigen, wenn der Benutzer noch keine Entscheidung getroffen hat
+    if (cookiesAccepted === null) {
       popup.style.display = 'block';
     }
 
     acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookiesAccepted', 'true');
-      alert('Danke für dein Vertrauen! Viel Spaß auf der Website! 🍪'); // alert für die google message
-      popup.style.display = 'none';
-      hasAccepted = true;
+      localStorage.setItem('cookiesAccepted', 'true'); // Entscheidung speichern
+      alert('Danke für dein Vertrauen! Viel Spaß auf der Website! 🍪');
+      popup.style.display = 'none'; // Popup schließen
     });
 
     declineBtn.addEventListener('click', () => {
-      alert('Oh nein, ohne Cookies wird es hier schwierig... 😜'); // alert für die google message
-      localStorage.setItem('cookiesAccepted', 'false');
-      // Benutzer bekommt keinen Zugriff auf die Website
-      window.location.href = 'https://img.chefkoch-cdn.de/rezepte/2257651361176625/bilder/1501872/crop-642x428/subway-cookies.jpg'; // Umleiten zu einer anderen Seite (z.B. Google)
-      popup.style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'false'); // Entscheidung speichern
+      alert('Oh nein, ohne Cookies wird es hier schwierig... 😜');
+      window.location.href = 'https://img.chefkoch-cdn.de/rezepte/2257651361176625/bilder/1501872/crop-642x428/subway-cookies.jpg';
     });
   });
 </script>
+/*Ich habe basically in eine andere seite mit cookies gesucht und gegoogelt was andere so codes verwendet
+haben und dann auf meine präferenzen geändert (die emojis sind von chatgpt, wusste nicht wie ich diese schreibe*/
 </body>
 </html>
