@@ -3,13 +3,13 @@ body {
     background-color: #f0f0f0;
     color: #333;
     margin: 0;
-    cursor: url('Pictures-Website/Fish-icon.png') 64 64, auto; /*does not work properly at the time*/
+    cursor: url('Pictures-Website/Fish-icon.png') 64 64, auto; /*Does not work properly*/
     padding-top: 85px; /* Adjusted for fixed header */
     padding-bottom: 90px; /* Adjusted for fixed footer */
 }
 
 header {
-    background-color: #0e613f;
+    background: #0e613f;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -34,11 +34,36 @@ header h1 {
     align-items: center;
 }
 
+/*LOGO Styling*/
+.header-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .qr-code {
     width: 75px; /* Größe anpassen */
     height: 75px;
     margin-right: 10px; /* Abstand zwischen QR-Code und Text */
 }
+
+.logo {
+    width: 75px; /* Größe des Logos anpassen */
+    height: auto;
+    margin-left: 10px;
+}
+
+.yt-logo {
+    width: 25px;
+    height: auto;
+}
+
+.yt-logo:hover{
+    opacity: 0.7;
+}
+
 
 .header-text {
     font-size: 14px;
@@ -79,6 +104,44 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Grid-Layout für Fangmethoden */
+.fishing-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 20px; /* Abstand zwischen den Karten */
+    padding: 20px;
+}
+
+/* Stil für die Fangmethoden-Karten */
+.fishing-method-card {
+    background-color: #ffffff; /* Weißer Hintergrund für die Karten */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für die Karten */
+    padding: 20px; /* Innenabstand */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animationseffekte */
+}
+
+.fishing-method-card h2 {
+    color: #0e613f; /* Dunkler Farbton für die Überschrift */
+    margin-top: 0; /* Kein Abstand oben */
+}
+
+.fishing-method-card:hover {
+    transform: translateY(-5px); /* Leichtes Anheben beim Hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Intensivierter Schatten beim Hover */
+}
+
+/* Link-Stil in den Karten */
+.wiki-link {
+    font-size: 0.9em;
+    color: #0e613f; /* Linkfarbe */
+    text-decoration: none; /* Unterstreichung entfernen */
+}
+
+.wiki-link:hover {
+    text-decoration: underline; /* Unterstreichung beim Hover */
+}
+
 
 section h2 {
     color: #074e33;
@@ -88,9 +151,91 @@ section:hover {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
 }
 
+
+.fish-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fish-table th, .fish-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.fish-table th {
+    background-color: #074e33;
+    color: white;
+}
+
+.fish-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.fish-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.main {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.sort-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#sortButton {
+    background-color: #0e613f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sortButton:hover {
+    background-color: #074e33;
+}
+
+.dropdown {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropdown.hidden {
+    display: none;
+}
+
+.dropdown button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+    background-color: #e0e0e0;
+}
+
+
 /* Footer Styling */
 footer {
-    background-color: #0e613f;
+    background: #0e613f;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -100,6 +245,7 @@ footer {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    <img> url(Pictures-Website/yt-button.png); </img>
 }
 
 .wiki-link {
@@ -117,41 +263,50 @@ footer {
 /* Cookie Pop-up */
 #cookie-popup {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border: 2px solid #0e613f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    animation: slideIn 0.5s ease-out;
 }
 
 #popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 #popup-content h2 {
-    margin: 0 0 10px;
+    margin: 0;
+    font-size: 1.5em;
+    color: #074e33;
 }
 
 #popup-content p {
-    margin-bottom: 20px;
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.5;
 }
 
 #popup-content button {
-    margin: 5px;
-    padding: 10px 20px;
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #accept-cookies {
@@ -165,5 +320,36 @@ footer {
 }
 
 #popup-content button:hover {
-    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hintergrundabdunkelung */
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter, dunkler Hintergrund */
+    z-index: 999; /* Liegt hinter dem Cookie-Pop-up, aber über der Seite */
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+/* Kein Scrollen im Body, wenn das Pop-up aktiv ist */
+body.no-scroll {
+    overflow: hidden; /* Deaktiviert das Scrollen */
+}
+
+
+/* Animation for Pop-up */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
